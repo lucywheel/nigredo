@@ -326,3 +326,5 @@ obj.publish('nameChange', 'john'); //sam, john
 ````
 
 ## Ссылки по теме
+
+ * [MVC для чайников](http://ruseller.com/lessons.php?rub=37&id=666)
