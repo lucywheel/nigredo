@@ -66,3 +66,5 @@ Three simple popups with different scaling settings.
 
 ## Eric Martin 
 [SimpleModal](http://www.ericmmartin.com/projects/simplemodal-demos/)
+
+[tingle.js](http://www.cssscript.com/demo/pure-javascript-modal-popup-with-css3-transitions-tingle-js/)
