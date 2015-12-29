@@ -48,3 +48,17 @@ Three simple popups with different scaling settings.
 1 — fits horizontally and vertically,
 2 — only horizontally,
 3 — no gaps, zoom animation, close icon in top-right corner.
+
+## Controls.js 
+[Dialog](http://controlsjs.com/docs/5.0.0/files/ng_controls/dialogs-js.html)
+
+
+## Controls.js 
+[Modals](http://materializecss.com/modals.html)
+[Dialogs (Toasts & Tooltips)](http://materializecss.com/dialogs.html)
+
+## enyojs.js 
+[Popup](http://enyojs.com/docs/latest/#/kind/enyo.Popup)
+
+## alloyui 
+[A.Modal](http://alloyui.com/api/classes/A.Modal.html)
