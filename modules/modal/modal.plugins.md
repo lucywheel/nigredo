@@ -62,3 +62,7 @@ Three simple popups with different scaling settings.
 
 ## alloyui 
 [A.Modal](http://alloyui.com/api/classes/A.Modal.html)
+
+
+## Eric Martin 
+[SimpleModal](http://www.ericmmartin.com/projects/simplemodal-demos/)

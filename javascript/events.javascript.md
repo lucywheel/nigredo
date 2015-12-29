@@ -1,4 +1,3 @@
-# 
 
 ## Countdown.js
 [Super simple countdowns.](gumroad.github.io)
