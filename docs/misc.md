@@ -6,7 +6,8 @@
 
 
 ## JS и его друзья
-- [Руководство Typescript](http://typescript-lang.ru/docs/). Перевод официальной документации Typescript на русский.
+- [JavaScript для начинающих](https://true-coder.ru/javascript-dlya-nachinayushhix).  Курс уроков по JS с самых основ. Для их изучения не потребуется никаких знаний в области программирования, за исключением знакомства с HTML и СSS.
 - [JavaScript Гарден](http://bonsaiden.github.io/JavaScript-Garden/ru/). Коротко и емко о тонких местах в js. 
-- [Node.js для начинающих](http://www.nodebeginner.ru/). Цель документа — помочь вам начать разработку приложений на Node.js и научить всему, что необходимо знать о «продвинутом» JavaScript.
 - [jQueryPage2Pge](http://jquery.page2page.ru/). Ресурс, посвященный jQuery. Есть доступное описание практически всех функций библиотеки jQuery, а также популярные рецепты и примеры. Больше подойдет для тех, кто пока не очень хорошо знаком с сутью вопроса.
+- [Node.js для начинающих](http://www.nodebeginner.ru/). Цель документа — помочь вам начать разработку приложений на Node.js и научить всему, что необходимо знать о «продвинутом» JavaScript.
+- [Руководство Typescript](http://typescript-lang.ru/docs/). Перевод официальной документации Typescript на русский.
