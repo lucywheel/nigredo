@@ -7,3 +7,4 @@
 
 ## JS и его друзья
 - [Руководство Typescript](http://typescript-lang.ru/docs/). Перевод официальной документации Typescript на русский.
+- [JavaScript Гарден](http://bonsaiden.github.io/JavaScript-Garden/ru/). Коротко и емко о тонких местах в js. 
