@@ -1,0 +1,50 @@
+/*Call to Action with : 
+- background
+- line underneath the button
+- arrow deported to the right
+- hover effect
+It does not rend well on all webmails, but the fall-back version is nice as well
+/*
+
+/*CTA0 Hover, must be written in the css part, before the media queries */
+.CTA0hoverzone:hover .CTA0hovermodif{background-image:url(http://www.maxiweb.fr/demo/pourlitmus/bg2.png) !important; background-color: #1967ff !important;}
+.CTA0hoverzone:hover .CTA0traithover{background-color: #003f77 !important;}
+
+CODE
+<table>
+<tr>
+    <td align="center">
+        <table width="200" class="CTA0hoverzone" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <!--Background-->
+                <td bgcolor="#960096" class="CTA0hovermodif" style="background-image: url(http://www.maxiweb.fr/demo/pourlitmus/bg.png);" background="http://www.maxiweb.fr/demo/pourlitmus/bg.png" width="320" height="40" valign="middle" align="center">
+                <!--[if gte mso 9]><v:rect style="width: 320px; height: 40px;" strokecolor="none"><v:fill type="tile" color="#960096" src="http://www.maxiweb.fr/demo/pourlitmus/bg.png"></v:fill></v:rect><v:shape id="theText" style="position: absolute; width: 320px; height: 40px;"><![endif]-->
+                    <table width="320" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <!--partie texte du bouton-->                
+                            <td height="40" width="270" valign="middle" style="text-align:center; mso-line-height-rule:exactly;">
+                                <a href="#" style="display: table-cell; height: 40px; width: 270px; vertical-align: middle; font-family: Arial, sans-serif; font-size: 14px; line-height: 18px; font-weight: 400; color: #ffffff; text-shadow:2px 2px 2px #000; text-decoration: none;">
+                                    CTA 0
+                                </a>
+                            </td>
+                            <!--partie image du bouton-->                
+                            <td width="50" height="40">
+                                <a href="#" style="text-decoration: none;">
+                                    <img src="http://www.maxiweb.fr/demo/pourlitmus/fleche.png" width="50" height="30" alt="&raquo;" border="0" style="display: block; font-family: Arial, sans-serif; font-size: 14px; font-weight: 400; color: #ffffff; position: relative; top: 0px; left: 10px; text-decoration: none;"/>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if gte mso 9]></v:shape><![endif]-->
+                </td>
+            </tr> 
+            <!--FIN du Background-->
+            <!--ligne en dessous du bouton-->
+            <tr>
+                <td height="3" class="CTA0traithover" style="font-size:0px; line-height:0px;" bgcolor="#640064">&nbsp;</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+

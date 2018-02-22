@@ -1,0 +1,57 @@
+<style>
+/*Only executes the following code when screen size is below 599*/
+@media only screen and (max-width: 599px) {
+	
+}	
+td[class="hide-on-mobile"] {
+				display: none!important; /* Generic*/
+				max-height:0!important; /* Gmail*/
+    			mso-hide:all!important; /* Outlook clients*/
+   				overflow:hidden!important; /* Generic */
+				visibility: hidden!important; /* Generic */
+				
+			}
+			
+			/*When using show-on-mobile make sure Inline styles are as above without !important*/
+			td[class="show-on-mobile"] {
+				width:100%!important;
+				display: block!important;
+				max-height: inherit!important; 
+				overflow: visable!important;
+				mso-hide: none !important;
+			}
+
+			
+/*Stack on Mobile STANDARD - Will stack 2 columns on top of each other*/
+ td[class="stack-column"] {
+              
+				display: block !important;
+                width: 100% !important;
+            	direction: ltr !important;
+				border-left: 0px !important;
+			}
+
+
+
+/*Stack Right Column on top of Left Mobile - Assign Right td mailCol and Left td subCol*/
+	td[class="mainCol"] { 
+        		display: table-header-group;
+				width: 100% !important;
+				float: none !important;
+				margin: 0 auto;
+				height: auto !important;
+			
+				}
+				
+td[class="subCol"] { 
+    			display: table-footer-group;
+				width: 100% !important;
+				float: none !important;
+				margin: 0 auto;
+				height: auto !important;
+			
+						
+				} 
+}
+
+</style>

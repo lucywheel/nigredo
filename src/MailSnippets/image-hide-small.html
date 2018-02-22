@@ -1,0 +1,20 @@
+<!-- Use the following CSS to show your image in your desired media query -->
+.image_mobile {
+	display:block!important;
+    max-height: none !important;
+    max-width:none !important;
+    line-height: 1.5 !important;
+    width:100%!important;
+    height:auto!important;
+}
+<!-- Use the following CSS to hide the "desktop" image in your desirec media query. MQ should be same as above. -->
+.hide {
+	display:none!important;
+	width:0px!important;
+	height: 0px!important;
+	overflow:hidden!important;
+	line-height: 0px!important;
+	font-size:0px!important;
+}
+
+<img border="0" width="{width}" height="{height}" src="{src-desktop}" alt="{alt}" style="display:block; outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;" class="hide"><div style="display:none; font-size:0; line-height:0; mso-hide: all; max-height: 0; max-width: 0; width:0;" class="image_mobile"><img border="0" width="{width-mobile}" height="{height-mobile}" src="{src-mobile}" alt="{alt}" style="display:none; font-size:0; line-height:0; mso-hide: all;max-height: 0; max-width: 0; width:0; -ms-interpolation-mode: bicubic;" class="image_mobile"></div>
