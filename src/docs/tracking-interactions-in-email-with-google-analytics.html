@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>  Tracking User Interactions in Email With Google Analytics</title>
+
+<meta name="keywords" content="Email Design Tips, Email Tutorials,Interactive Email Design, CSS in Email Design">
+<meta name="description" content="Interactive Email Tips, Tutorials and News">
+
+	<!--iOS/android/handheld specific -->	
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" media="all" href="http://freshinbox.com/blog/wp-content/themes/justblue/style.css" />
+	<link rel="pingback" href="http://freshinbox.com/blog/xmlrpc.php" />
+			<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!--start fonts-->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+<!--end fonts-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js?ver=1.6.1"></script>
+<script src="http://freshinbox.com/blog/wp-content/themes/justblue/js/modernizr.min.js"></script>
+<script src="http://freshinbox.com/blog/wp-content/themes/justblue/js/customscript.js" type="text/javascript"></script>
+<style type="text/css">
+body {background-color:#fcfcfc;}
+.sidebar #s{
+  border:1px solid #cccccc;
+ border-radius:3px;
+}</style>
+<!--start custom CSS-->
+<!--end custom CSS-->
+	<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="FreshInbox &raquo; Feed" href="http://freshinbox.com/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="FreshInbox &raquo; Comments Feed" href="http://freshinbox.com/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="FreshInbox &raquo; Tracking User Interactions in Email With Google Analytics Comments Feed" href="http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/freshinbox.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css'  href='http://freshinbox.com/blog/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-theme-jk-ado-css'  href='http://freshinbox.com/blog/wp-content/uploads/crayon-syntax-highlighter/themes/jk-ado/jk-ado.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='http://freshinbox.com/blog/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://freshinbox.com/blog/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='digg-digg-css'  href='http://freshinbox.com/blog/wp-content/plugins/digg-digg/css/diggdigg-style.css?ver=5.3.6' type='text/css' media='screen' />
+<link rel='stylesheet' id='forms-for-campaign-monitor-custom_cm_monitor_css-css'  href='http://freshinbox.com/blog/wp-content/plugins/forms-for-campaign-monitor/forms/views/public/css/app.css?ver=1.0.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://freshinbox.com/blog/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://freshinbox.com/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/freshinbox.com\/blog\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://freshinbox.com/blog/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta'></script>
+<link rel='https://api.w.org/' href='http://freshinbox.com/blog/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://freshinbox.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://freshinbox.com/blog/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Tracking Actions in Interactive Email' href='http://freshinbox.com/blog/tracking-actions-in-interactive-email/' />
+<link rel='next' title='Interactive Carousels in Email: HP ENVY &#038; B&#038;Q Outdoor Furniture' href='http://freshinbox.com/blog/email-carousel-hp-envy-bnq/' />
+<!--Theme by MyThemeShop.com-->
+<link rel="canonical" href="http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/" />
+<link rel='shortlink' href='http://freshinbox.com/blog/?p=2599' />
+<link rel="alternate" type="application/json+oembed" href="http://freshinbox.com/blog/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffreshinbox.com%2Fblog%2Ftracking-interactions-in-email-with-google-analytics%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://freshinbox.com/blog/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffreshinbox.com%2Fblog%2Ftracking-interactions-in-email-with-google-analytics%2F&#038;format=xml" />
+<link rel="image_src" href="http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-overview.jpg" />		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+				<style type="text/css" id="wp-custom-css">
+			.cmApp_formHeader{
+ font-size:15px!important;
+}
+.cmApp_signupContainer{
+  padding:10px !important;
+  width:100%!important;
+}		</style>
+	
+
+<link rel="icon" href="http://freshinbox.com/favicon.ico?v=2" type="image/x-icon" />
+<link rel="shortcut icon" href="http://freshinbox.com/favicon.ico?v=2" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '130086490995563');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=130086490995563&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- LinkedIn -->
+<script type="text/javascript">
+_linkedin_data_partner_id = "165356";
+</script><script type="text/javascript">
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=165356&fmt=gif" />
+</noscript>
+
+<!-- End Facebook Pixel Code -->
+
+<!-- Global Adwords site tag (gtag.js) - AdWords: 1024096093 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1024096093"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-1024096093');
+</script>
+
+
+
+</head>
+
+
+<body id ="blog" class="post-template-default single single-post postid-2599 single-format-standard main cat-28-id cat-25-id cat-47-id">
+	<header class="main-header">
+		<div class="container">
+                        <div class="main-navigation">
+
+                         </div>
+			<div id="header">
+                            <div class="content">
+                                						<h1 id="logo">
+							<a href="http://freshinbox.com/blog">
+                                                        
+<span style="color:#99C731">Fresh</span><span style="color:#008BCD;">Inbox</span>
+
+
+    
+                                                        </a>
+						</h1><BR>
+<span id="sublogo">Interactive and Advanced Email Design Techniques and News</span>
+
+<!-- END #logo -->
+
+				  
+                                <div class="horisontal-header-banner">					</div>                
+                            </div>
+				
+				<div class="secondary-navigation">
+					<nav id="navigation" >
+<!-- JKMOD -->
+<ul id="menu-pages-1" class="menu sf-js-enabled"><li class="menu-item-first menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="http://freshinbox.com/blog/">Blog</a></li>
+<li class="menu-item-last menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="http://freshinbox.com/blog/category/interactive-email-2/">Interactive Email Articles</a></li>
+<li class="menu-item-last menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="http://freshinbox.com/resources/">Resources</a></li>
+<li class="menu-item-last menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="http://freshinbox.com/resources/tools/">Tools</a></li>
+<li class="menu-item-last menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="http://freshinbox.com/resources/techniques.php">Examples</a></li>
+</ul>
+
+<ul id="menu-pages-1" class="menu sf-js-enabled" style="float:right;"><li class="menu-item-first menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="http://freshinbox.com/blog/about/">About</a></li>
+<li class="menu-item-last menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="http://freshinbox.com/blog/contact/">Contact</a></li>
+</ul>
+
+
+											</nav>
+				</div>              
+			</div><!--#header-->
+		</div><!--.container-->        
+	</header>
+<div class="main-container">
+<div id="page" class="single">
+	<div class="content">
+		<article class="article">
+			<div id="content_box" >
+									<div id="post-2599" class="g post post-2599 type-post status-publish format-standard has-post-thumbnail hentry category-email-resource category-interactive-email-tutorial category-kinetic-email cat-28-id cat-25-id cat-47-id has_thumb">
+                    <div class="single_post">
+						<header>
+						<h1 class="title single-title">Tracking User Interactions in Email With Google Analytics</h1>
+						</header><!--.headline_area-->
+						                                                <div class="post-info">
+                                                Posted in <a href="http://freshinbox.com/blog/category/email-resource/" rel="nofollow">Email Resource</a>, <a href="http://freshinbox.com/blog/category/interactive-email-tutorial/" rel="nofollow">Interactive Email Tutorials</a>, <a href="http://freshinbox.com/blog/category/kinetic-email/" rel="nofollow">Kinetic Email</a> by <a rel="nofollow" href="http://freshinbox.com/blog/author/justin/" title="Posts by Justin" rel="author">Justin</a>  On March 1, 2016<span class="thecomment"><a href="http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/#comments">. 7 Comments</a></span>
+                                                </div>
+												<div class="post-single-content box mark-links">
+							<a id="dd_start"></a><p><img src="http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-overview.jpg" alt="analytics-overview" width="450" class="aligncenter wp-image-2600" style="width:80%" srcset="http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-overview.jpg 700w, http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-overview-300x155.jpg 300w" sizes="(max-width: 700px) 100vw, 700px" /><BR><BR></p>
+<p>This is a follow up to <a href="http://freshinbox.com/blog/tracking-actions-in-interactive-email">Tracking Actions in Interactive Email</a> which covered the mechanics of tracking user interactions in email using the selective loading of background images.  This post will cover how to use Google Analytics to serve up the tracking pixel and provide the tracking reports.</p>
+<p>A not so well known feature of <a href="https://www.google.com/analytics/" target="_blank">Google Anaytics</a> (GA) is the ability to track email events &#8211; specifically <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/email" target="_blank">tracking email opens</a>. By carefully constructing your analytics pixel URL you can also use that to track user interactions in your kinetic campaigns.</p>
+<p>If you don&#8217;t yet have a Google Analytics tracking ID (UA-XXXXX), <a href="https://support.google.com/analytics/answer/1008015?hl=en" target="_blank">follow this link</a> to get one.<BR><BR></p>
+<h4>Analytics Link Structure</h4>
+<p>Following <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/email" target="_blank">this guide</a> your tracker pixel URL will look something like this.</p>
+<div style="font-family:courier;word-break:break-all;">
+http://www.google-analytics.com/collect?<BR>v=1&#038;tid=UAXXXXXX&#038;t=event&#038;cid=123123123&#038;<BR>ec=kinetic&#038;ea=interact&#038;el=unit1&#038;<BR>cn=campaign_20160130&#038;cs=email</div>
+<div style="padding:10px 20px;">
+tid = Google Analytics tracking ID (ie. UA-XXXX)<br />
+cid = Unique session id (recipient id)<br />
+t = Tracking type (set to &#8220;event&#8221;)<br />
+ec = Event category<br />
+ea = Event action<br />
+el = Event label (optional)<br />
+cn = Campaign name (optional)<br />
+cs = Campaign source (required for campaign tracking)
+</div>
+<p><BR></p>
+<p>There are a few more variables that you can track using the GA link such as campaign medium (cm) and custom variables. In fact you can go so far as to use custom dimensions to <a href="http://www.lunametrics.com/blog/2013/07/16/google-analytics-email-tracking-part-2/" target="_blank">tie users to visits</a> to your website &#8211; but for our purposes we&#8217;ll stick with the basic set.<BR><BR></p>
+<h4>Assigning values to the variables</h4>
+<p>Depending on your familiarity with Google Analytics, you may already have an established way to use the GA variables so the following is just one of several possible ways to assign them.</p>
+<p>Set the &#8220;tid&#8221; variable to your GA tracking ID, and leave the &#8220;t&#8221; variable set to &#8220;event&#8221; to let GA know you&#8217;re tracking an event as opposed to a page view.</p>
+<p>Event category (ec) can be seen as a way to group your events. I like to set mine to &#8220;kinetic&#8221;.</p>
+<p>Event action (ea) is where you can specify the type of event tracked &#8211; ie interact, open, client-type, animation etc.</p>
+<p>Event label (el) is optional and you can use it to track the type of interactions be it generic (ie. rollover, clicked) or specific such as the unit that was interacted with (ie. unit1, unit2 etc). You can use this to track the client type as well (webkit, mobile, gmail-webmail etc).</p>
+<p>You can use campaign name (cn) and campaign source (cs) to track your reports by email campaign. Campaign source is required if you want to track by campaign name, and you can use any value &#8211; I just use &#8220;email&#8221; here.</p>
+<p><b>Unique Session ID (cid)</b></p>
+<p>The unique session id (cid) is an identifier that uniquely identifies the user session. Normally you&#8217;d use the recipient&#8217;s email address, but unfortunately Google does not want you to do this. According to the docs, information passed to GA must not be <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters#cid">personally identifiable information</a> (pii).</p>
+<p>In order to comply with the PII requirement, you may have to resort to your Email Service Provider (ESP) to give you some sort of ID that identifies the user other than their email. MailChimp has a merge tag <a href="http://kb.mailchimp.com/merge-tags/all-the-merge-tags-cheat-sheet" target="_blank">*|UNIQID|*</a> that produces a user&#8217;s ID.<BR><BR></p>
+<h4>Integrating the GA Pixel</h4>
+<p>Now that you&#8217;ve got your GA pixel URL you can integrate the pixel into your campaigns. </p>
+<p>For background see: <a href="http://freshinbox.com/blog/tracking-actions-in-interactive-email">Tracking Interactions in Interactive Email</a>.</p>
+<p>Here are some examples based on the code used in the referenced article:<br />
+(Replace the GA tracking ID (tid), session ID (cid) and campaign name (cn) variables)</p>
+<p><b>Open Tracking:</b></p>
+<div style="width:100%">
+<p>Lets start with the basic open tracking pixel that will record an event each time an email is opened (assuming images are displayed).</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a9486be7c5ec090224835" class="crayon-syntax crayon-theme-jk-ado crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover wrap" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-plain-wrap"><textarea  class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&lt;img src="http://www.google-analytics.com/collect?v=1&amp;
+tid=UA-XXXXXX&amp;t=event&amp;cid=*|UNIQID|*&amp;cn=test_campaign&amp;
+cs=email&amp;ec=kinetic&amp;ea=open" width=1 height=1&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a9486be7c5ec090224835-1">1</div><div class="crayon-num" data-line="crayon-5a9486be7c5ec090224835-2">2</div><div class="crayon-num" data-line="crayon-5a9486be7c5ec090224835-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a9486be7c5ec090224835-1"><span class="crayon-o">&lt;</span><span class="crayon-e">img </span><span class="crayon-v">src</span><span class="crayon-o">=</span><span class="crayon-s">"http://www.google-analytics.com/collect?v=1&amp;</span></div><div class="crayon-line" id="crayon-5a9486be7c5ec090224835-2"><span class="crayon-s">tid=UA-XXXXXX&amp;t=event&amp;cid=*|UNIQID|*&amp;cn=test_campaign&amp;</span></div><div class="crayon-line" id="crayon-5a9486be7c5ec090224835-3"><span class="crayon-s">cs=email&amp;ec=kinetic&amp;ea=open"</span><span class="crayon-h"> </span><span class="crayon-v">width</span><span class="crayon-o">=</span><span class="crayon-cn">1</span><span class="crayon-h"> </span><span class="crayon-v">height</span><span class="crayon-o">=</span><span class="crayon-cn">1</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p><BR><BR></p>
+<p><b>Rollover:</b></p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a9486be7c5f7667730696" class="crayon-syntax crayon-theme-jk-ado crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover wrap" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-plain-wrap"><textarea  class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+.img-swap:hover .tpixel{
+  background-image:url(http://www.google-analytics.com/collect?v=1&amp;
+tid=UA-XXXXXX&amp;t=event&amp;cid=*|UNIQID|*&amp;cn=test_campaign&amp;
+cs=email&amp;ec=kinetic&amp;ea=interact&amp;el=rollover);
+} </textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a9486be7c5f7667730696-1">1</div><div class="crayon-num" data-line="crayon-5a9486be7c5f7667730696-2">2</div><div class="crayon-num" data-line="crayon-5a9486be7c5f7667730696-3">3</div><div class="crayon-num" data-line="crayon-5a9486be7c5f7667730696-4">4</div><div class="crayon-num" data-line="crayon-5a9486be7c5f7667730696-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a9486be7c5f7667730696-1"><span class="crayon-sy">.</span><span class="crayon-v">img</span><span class="crayon-o">-</span><span class="crayon-v">swap</span><span class="crayon-o">:</span><span class="crayon-i">hover</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-v">tpixel</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a9486be7c5f7667730696-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">background</span><span class="crayon-o">-</span><span class="crayon-v">image</span><span class="crayon-o">:</span><span class="crayon-e">url</span><span class="crayon-sy">(</span><span class="crayon-v">http</span><span class="crayon-o">:</span><span class="crayon-c">//www.google-analytics.com/collect?v=1&amp;</span></div><div class="crayon-line" id="crayon-5a9486be7c5f7667730696-3"><span class="crayon-v">tid</span><span class="crayon-o">=</span><span class="crayon-v">UA</span><span class="crayon-o">-</span><span class="crayon-v">XXXXXX</span><span class="crayon-o">&amp;</span><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-v">event</span><span class="crayon-o">&amp;</span><span class="crayon-v">cid</span><span class="crayon-o">=</span><span class="crayon-o">*</span><span class="crayon-o">|</span><span class="crayon-v">UNIQID</span><span class="crayon-o">|</span><span class="crayon-o">*</span><span class="crayon-o">&amp;</span><span class="crayon-v">cn</span><span class="crayon-o">=</span><span class="crayon-v">test_campaign</span><span class="crayon-o">&amp;</span></div><div class="crayon-line" id="crayon-5a9486be7c5f7667730696-4"><span class="crayon-v">cs</span><span class="crayon-o">=</span><span class="crayon-v">email</span><span class="crayon-o">&amp;</span><span class="crayon-v">ec</span><span class="crayon-o">=</span><span class="crayon-v">kinetic</span><span class="crayon-o">&amp;</span><span class="crayon-v">ea</span><span class="crayon-o">=</span><span class="crayon-v">interact</span><span class="crayon-o">&amp;</span><span class="crayon-v">el</span><span class="crayon-o">=</span><span class="crayon-v">rollover</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a9486be7c5f7667730696-5"><span class="crayon-sy">}</span><span class="crayon-h"> </span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0010 seconds] -->
+<p><BR><BR> </p>
+<p><b>Carousel:</b><br />
+<I>This won&#8217;t actually work in MailChimp since it doesn&#8217;t support form elements like radio</I></p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a9486be7c5fb727507822" class="crayon-syntax crayon-theme-jk-ado crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover wrap" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-plain-wrap"><textarea  class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+.radio2:checked ~ .carousel .tpixel{
+  background-image:url(http://www.google-analytics.com/collect?v=1&amp;
+tid=UA-XXXXXX&amp;t=event&amp;cid=*|UNIQID|*&amp;cn=test_campaign&amp;
+cs=email&amp;ec=kinetic&amp;ea=interact&amp;el=radio2_select);
+}
+.radio3:checked + .carousel .tpixel{
+  background-image:url(http://www.google-analytics.com/collect?v=1&amp;
+tid=UA-XXXXXX&amp;t=event&amp;cid=*|UNIQID|*&amp;cn=test_campaign&amp;
+cs=email&amp;ec=kinetic&amp;ea=interact&amp;el=radio3_select);
+}</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-1">1</div><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-2">2</div><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-3">3</div><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-4">4</div><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-5">5</div><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-6">6</div><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-7">7</div><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-8">8</div><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-9">9</div><div class="crayon-num" data-line="crayon-5a9486be7c5fb727507822-10">10</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-1"><span class="crayon-sy">.</span><span class="crayon-v">radio2</span><span class="crayon-o">:</span><span class="crayon-v">checked</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-i">carousel</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-v">tpixel</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">background</span><span class="crayon-o">-</span><span class="crayon-v">image</span><span class="crayon-o">:</span><span class="crayon-e">url</span><span class="crayon-sy">(</span><span class="crayon-v">http</span><span class="crayon-o">:</span><span class="crayon-c">//www.google-analytics.com/collect?v=1&amp;</span></div><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-3"><span class="crayon-v">tid</span><span class="crayon-o">=</span><span class="crayon-v">UA</span><span class="crayon-o">-</span><span class="crayon-v">XXXXXX</span><span class="crayon-o">&amp;</span><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-v">event</span><span class="crayon-o">&amp;</span><span class="crayon-v">cid</span><span class="crayon-o">=</span><span class="crayon-o">*</span><span class="crayon-o">|</span><span class="crayon-v">UNIQID</span><span class="crayon-o">|</span><span class="crayon-o">*</span><span class="crayon-o">&amp;</span><span class="crayon-v">cn</span><span class="crayon-o">=</span><span class="crayon-v">test_campaign</span><span class="crayon-o">&amp;</span></div><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-4"><span class="crayon-v">cs</span><span class="crayon-o">=</span><span class="crayon-v">email</span><span class="crayon-o">&amp;</span><span class="crayon-v">ec</span><span class="crayon-o">=</span><span class="crayon-v">kinetic</span><span class="crayon-o">&amp;</span><span class="crayon-v">ea</span><span class="crayon-o">=</span><span class="crayon-v">interact</span><span class="crayon-o">&amp;</span><span class="crayon-v">el</span><span class="crayon-o">=</span><span class="crayon-v">radio2_select</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-5"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-6"><span class="crayon-sy">.</span><span class="crayon-v">radio3</span><span class="crayon-o">:</span><span class="crayon-v">checked</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-i">carousel</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-v">tpixel</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">background</span><span class="crayon-o">-</span><span class="crayon-v">image</span><span class="crayon-o">:</span><span class="crayon-e">url</span><span class="crayon-sy">(</span><span class="crayon-v">http</span><span class="crayon-o">:</span><span class="crayon-c">//www.google-analytics.com/collect?v=1&amp;</span></div><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-8"><span class="crayon-v">tid</span><span class="crayon-o">=</span><span class="crayon-v">UA</span><span class="crayon-o">-</span><span class="crayon-v">XXXXXX</span><span class="crayon-o">&amp;</span><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-v">event</span><span class="crayon-o">&amp;</span><span class="crayon-v">cid</span><span class="crayon-o">=</span><span class="crayon-o">*</span><span class="crayon-o">|</span><span class="crayon-v">UNIQID</span><span class="crayon-o">|</span><span class="crayon-o">*</span><span class="crayon-o">&amp;</span><span class="crayon-v">cn</span><span class="crayon-o">=</span><span class="crayon-v">test_campaign</span><span class="crayon-o">&amp;</span></div><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-9"><span class="crayon-v">cs</span><span class="crayon-o">=</span><span class="crayon-v">email</span><span class="crayon-o">&amp;</span><span class="crayon-v">ec</span><span class="crayon-o">=</span><span class="crayon-v">kinetic</span><span class="crayon-o">&amp;</span><span class="crayon-v">ea</span><span class="crayon-o">=</span><span class="crayon-v">interact</span><span class="crayon-o">&amp;</span><span class="crayon-v">el</span><span class="crayon-o">=</span><span class="crayon-v">radio3_select</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a9486be7c5fb727507822-10"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0021 seconds] -->
+<p><BR><BR></p>
+<p><b>Mobile opens</b></p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a9486be7c5fe005100266" class="crayon-syntax crayon-theme-jk-ado crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover wrap" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-plain-wrap"><textarea  class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&lt;style&gt;
+@media screen and (max-device-width: 600px) {
+  .mobile-pixel{
+    background-image: url(http://www.google-analytics.com/collect?
+v=1&amp;amp;tid=UA-XXXXXX&amp;amp;t=event&amp;amp;cid=*|UNIQID|*
+&amp;amp;cn=test_campaign&amp;amp;cs=email&amp;amp;ec=kinetic
+&amp;amp;ea=client-type&amp;amp;el=mobile);
+  }
+}
+&lt;/style&gt;
+&lt;div class="mobile-pixel"&gt;&lt;/div&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="hide">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-1">1</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-2">2</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-3">3</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-4">4</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-5">5</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-6">6</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-7">7</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-8">8</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-9">9</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-10">10</div><div class="crayon-num" data-line="crayon-5a9486be7c5fe005100266-11">11</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-1"><span class="crayon-ta">&lt;style&gt;</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-2"><span class="crayon-n">@media screen and (max-device-width: 600px) </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">.mobile-pixel</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">background-image</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">url</span><span class="crayon-sy">(</span><span class="crayon-e ">http</span><span class="crayon-sy">:</span><span class="crayon-i ">//www.google-analytics.com/collect?</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-5"><span class="crayon-i ">v=1&amp;amp</span><span class="crayon-sy">;</span><span class="crayon-i ">tid=UA-XXXXXX&amp;amp</span><span class="crayon-sy">;</span><span class="crayon-i ">t=event&amp;amp</span><span class="crayon-sy">;</span><span class="crayon-i ">cid=*|UNIQID|*</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-6"><span class="crayon-i ">&amp;amp</span><span class="crayon-sy">;</span><span class="crayon-i ">cn=test_campaign&amp;amp</span><span class="crayon-sy">;</span><span class="crayon-i ">cs=email&amp;amp</span><span class="crayon-sy">;</span><span class="crayon-i ">ec=kinetic</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-7"><span class="crayon-i ">&amp;amp</span><span class="crayon-sy">;</span><span class="crayon-i ">ea=client-type&amp;amp</span><span class="crayon-sy">;</span><span class="crayon-i ">el=mobile</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-9"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-10"><span class="crayon-ta">&lt;/style&gt;</span></div><div class="crayon-line" id="crayon-5a9486be7c5fe005100266-11"><span class="crayon-o">&lt;</span><span class="crayon-e">div </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"mobile-pixel"</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">div</span><span class="crayon-o">&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0015 seconds] -->
+<p><BR><BR>
+</div>
+<h4>Testing Your Pixel</h4>
+<p>One of the cool features of Google Analytics is the ability to see realtime events as they happen. This allows you to instantly test if your pixels are configured properly. You can send a test campaign (or just load the HTML within a browser) and your interactions will appear immediately in the realtime view.<BR><BR></p>
+<p><a href="http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-realtime3.gif"><img src="http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-realtime3.gif" alt="analytics-realtime3" width="450" class="aligncenter wp-image-2601" style="width:100%" /></a><BR></p>
+<p>You can get to the realtime view through the left side menu <strong>Real-Time -> Events</strong>. Clicking on the &#8220;Events (last 30 min)&#8221; option allows you to see the total number of events per event action fired.</p>
+<p>From the above animation you can observe that the delay in the recording of an event is relatively short. Also note that due to the fact that once the pixel is loaded in a page it is not retrieved again unless the page is refreshed, activating the rollover event the second time did not produce a recorded event.<BR><BR></p>
+<h4>Reporting</h4>
+<p>Here&#8217;s the exciting part. You can get to the events reporting section in Google Analytics through the left side menu <strong>Behavior -> Events -> Top Events</strong>. </p>
+<p>Once you&#8217;re at Top Events, you can see all the events broken down by event category. Clicking on the &#8220;kinetic&#8221; event category, you can see all the event actions as shown below:<BR><BR></p>
+<p><b>Total Events and Unique Events</b><BR></p>
+<p><a href="http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-report.jpg"><img src="http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-report.jpg" alt="analytics-report" width="450" class="aligncenter wp-image-2602" style="width:100%" srcset="http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-report.jpg 755w, http://freshinbox.com/blog/wp-content/uploads/2015/12/analytics-report-300x129.jpg 300w" sizes="(max-width: 755px) 100vw, 755px" /></a><BR></p>
+<p>In the above screenshot, you can see two metrics Total Events and Unique events. Total Events is basically the number of times the pixel for an event has been loaded. </p>
+<p>However <strong>Unique Events is not the number of unique users that have triggered an event</strong>. It refers to the number of sessions that an event has taken place in.  For example if a single user opened an email 10 times in 3 days, Total Events would show 10 as expected, but Unique Events will actually show 3 and not 1. Google Analytics starts determines a new session has ended if it detects no events from a user after 30 minutes. See <a href="https://support.google.com/analytics/answer/2731565?hl=en">this article</a> for more information<BR><BR></p>
+<p><b>Counting Users</b></p>
+<p>In order to show how many unique users has triggered an event, you&#8217;d need to add the Users column using a Custom Report.</p>
+<p>This video below shows you how to do it:<br />
+<center><b><a href="https://www.youtube.com/watch?v=Cf5YGAazGyU" target=_new>How to Create Google Analytics Custom Reports to View Events By User</a></b></center></p>
+<style>
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width:90%;margin:0px auto;}
+.video-container iframe, .video-container object, .video-container embed, .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 90%; }
+</style>
+<div class="video-container"><iframe width="960" height="540" src="https://www.youtube.com/embed/Cf5YGAazGyU?feature=oembed" frameborder="0" allowfullscreen></iframe></div>
+<p><BR><BR></p>
+<h4>Analytics Galore</h4>
+<p>With Google Analytics you have a free and powerful way to track user interactions with your email. I&#8217;d love to hear any insights you find with your data!</p>
+<p>Also if you happen to know the merge tags for &#8220;subscriber id&#8221; for your Email Service Provider (ie. Responsys, ExactTarget etc.), go ahead and comment below or <a href="http://freshinbox.com/blog/contact/">send me a note</a>.</p>
+<p><BR><BR><BR><br />
+<div style="padding:10px; border: 2px solid #99C731;background-color:#FFF8DC;border-radius:5px;">
+<form action="https://freshinbox1.createsend.com/t/i/s/adrmi/" method="post" id="subForm">
+<span class="fisub_header" style="font-weight:bold;">Subscribe to the #EmailGeeks Newsletter</span>
+<p><input id="fieldEmail" name="cm-adrmi-adrmi" type="email" style="width:90%" required placeholder="Your Email Address" /></p>
+<p><button type="submit">Subscribe</button></p>
+</form>
+</div></p>
+<a id="dd_end"></a><div class='dd_outer'><div class='dd_inner'><div id='dd_ajax_float'><div class='dd_button_v'><a href="http://twitter.com/share" class="twitter-share-button" data-url="http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/" data-count="vertical" data-text="Tracking User Interactions in Email With Google Analytics" data-via="@FreshInbox" ></a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></div><div style='clear:left'></div><div class='dd_button_v'><a href="http://bufferapp.com/add" class="buffer-add-button" data-count="vertical" data-text="Tracking User Interactions in Email With Google Analytics" data-url="http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/" data-via="@FreshInbox"></a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script></div><div style='clear:left'></div><div class='dd_button_v'><script src="//connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/" send="true" show_faces="false"  layout="box_count" width="50"  ></fb:like></div><div style='clear:left'></div><div class='dd_button_v'><a name='fb_share' type='box_count' share_url='http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/' href='http://www.facebook.com/sharer.php'></a><script src='http://static.ak.fbcdn.net/connect.php/js/FB.Share' type='text/javascript'></script></div><div style='clear:left'></div></div></div></div><script type="text/javascript">var dd_offset_from_content = 40;var dd_top_offset_from_content = 0;var dd_override_start_anchor_id = "";var dd_override_top_offset = "";</script><script type="text/javascript" src="http://freshinbox.com/blog/wp-content/plugins/digg-digg//js/diggdigg-floating-bar.js?ver=5.3.6"></script>																				</div>
+						</div><!--.post-content box mark-links-->
+								</div><!--.g post-->
+		<!-- You can start editing here. -->
+<div id="comments">
+<div class="total-comments">Latest Comments</div>
+
+<ol class="commentlist">
+<div class="navigation">
+<div class="alignleft"></div>
+<div class="alignright"></div>
+</div>
+
+	<li class="comment even thread-even depth-1" id="li-comment-17258">
+	<div id="comment-17258" style="position:relative;">
+	<div class="comment-author vcard">
+            <div class="avatar">
+                    <img alt='' src='http://0.gravatar.com/avatar/96abc96fb25998e8fa1b2fa529700235?s=68&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/96abc96fb25998e8fa1b2fa529700235?s=136&#038;d=mm&#038;r=g 2x' class='avatar avatar-68 photo' height='68' width='68' />                    <time>March 8, 2016</time>    
+            </div>
+	</div>
+            <div class="comment-content">
+                
+                <span class="fn">Wouter van der Heijden</span>    
+                    
+                                <div class="comment-meta commentmetadata">
+                </div>
+                <p>Hi,</p>
+<p>Thank you for your explanation about tracking mail user interactions with Google Analytics. I think the open-hits should not generate sessions, because the users are not on the site.<br />
+Is there a reason why you did not include the non interactive parameter (&amp;ni=1) in the string?</p>
+                <div class="reply">
+                <a rel='nofollow' class='comment-reply-link' href='http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/?replytocom=17258#respond' onclick='return addComment.moveForm( "comment-17258", "17258", "respond", "2599" )' aria-label='Reply to Wouter van der Heijden'>Reply</a>                </div>
+            </div> 
+       </div>    
+
+<ul class="children">
+	<li class="comment byuser comment-author-justin bypostauthor odd alt depth-2" id="li-comment-17275">
+	<div id="comment-17275" style="position:relative;">
+	<div class="comment-author vcard">
+            <div class="avatar">
+                    <img alt='' src='http://2.gravatar.com/avatar/20c8ceb9b89e2a72d2785a8b37c45ce6?s=68&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/20c8ceb9b89e2a72d2785a8b37c45ce6?s=136&#038;d=mm&#038;r=g 2x' class='avatar avatar-68 photo' height='68' width='68' />                    <time>March 9, 2016</time>    
+            </div>
+	</div>
+            <div class="comment-content">
+                
+                <span class="fn">Justin</span>    
+                    
+                                <div class="comment-meta commentmetadata">
+                </div>
+                <p>Hey Wouter, thanks for bringing that up. Could you tell me where it skews your site stats? Google says that ni is meant to denote that the action was not initiated by the user but in this case an open is user initiated.</p>
+                <div class="reply">
+                <a rel='nofollow' class='comment-reply-link' href='http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/?replytocom=17275#respond' onclick='return addComment.moveForm( "comment-17275", "17275", "respond", "2599" )' aria-label='Reply to Justin'>Reply</a>                </div>
+            </div> 
+       </div>    
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-24840">
+	<div id="comment-24840" style="position:relative;">
+	<div class="comment-author vcard">
+            <div class="avatar">
+                    <img alt='' src='http://1.gravatar.com/avatar/198ed53aebe704178ef2db2223cee5c1?s=68&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/198ed53aebe704178ef2db2223cee5c1?s=136&#038;d=mm&#038;r=g 2x' class='avatar avatar-68 photo' height='68' width='68' />                    <time>October 19, 2016</time>    
+            </div>
+	</div>
+            <div class="comment-content">
+                
+                <span class="fn"><a href='http://www.campaigntrackly.com' rel='external nofollow' class='url'>Milena</a></span>    
+                    
+                                <div class="comment-meta commentmetadata">
+                </div>
+                <p>Hey there, really awesome blog, learned a lot:)). One question though &#8211; what happens if I dont specify a cn in the tracking pixel &#8211; will GA automatically parse the campaign name? If not, is there a way to get it to specify it based on utm_campaign? Thanks</p>
+                <div class="reply">
+                <a rel='nofollow' class='comment-reply-link' href='http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/?replytocom=24840#respond' onclick='return addComment.moveForm( "comment-24840", "24840", "respond", "2599" )' aria-label='Reply to Milena'>Reply</a>                </div>
+            </div> 
+       </div>    
+
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-30183">
+	<div id="comment-30183" style="position:relative;">
+	<div class="comment-author vcard">
+            <div class="avatar">
+                    <img alt='' src='http://2.gravatar.com/avatar/e2555c46b5e43c9265c8119b0a5d4cd2?s=68&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/e2555c46b5e43c9265c8119b0a5d4cd2?s=136&#038;d=mm&#038;r=g 2x' class='avatar avatar-68 photo' height='68' width='68' />                    <time>March 20, 2017</time>    
+            </div>
+	</div>
+            <div class="comment-content">
+                
+                <span class="fn">bblurock</span>    
+                    
+                                <div class="comment-meta commentmetadata">
+                </div>
+                <p>Hey, thank you so much for the article. Really helpful,</p>
+<p>I have one question that if I put the <code>Mobile opens</code> style and normal  on email and open it in mobile, the event will fire twice.</p>
+<p>Is there any way to prevent that?</p>
+                <div class="reply">
+                <a rel='nofollow' class='comment-reply-link' href='http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/?replytocom=30183#respond' onclick='return addComment.moveForm( "comment-30183", "30183", "respond", "2599" )' aria-label='Reply to bblurock'>Reply</a>                </div>
+            </div> 
+       </div>    
+
+<ul class="children">
+	<li class="comment byuser comment-author-justin bypostauthor even depth-2" id="li-comment-30191">
+	<div id="comment-30191" style="position:relative;">
+	<div class="comment-author vcard">
+            <div class="avatar">
+                    <img alt='' src='http://2.gravatar.com/avatar/20c8ceb9b89e2a72d2785a8b37c45ce6?s=68&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/20c8ceb9b89e2a72d2785a8b37c45ce6?s=136&#038;d=mm&#038;r=g 2x' class='avatar avatar-68 photo' height='68' width='68' />                    <time>March 21, 2017</time>    
+            </div>
+	</div>
+            <div class="comment-content">
+                
+                <span class="fn">Justin</span>    
+                    
+                                <div class="comment-meta commentmetadata">
+                </div>
+                <p>I suggest using using different codes for mobile and desktop so you know which is fired, so even if the desktop one fires, when opened in mobile, you can simply deduct the desktop fires from mobile.</p>
+<p>If you have to share pixel codes one way is to use the mobile pixel but change the media query to only target non mobile screens, but that would not work on clients that don&#8217;t support media queries like Outlook.</p>
+                <div class="reply">
+                <a rel='nofollow' class='comment-reply-link' href='http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/?replytocom=30191#respond' onclick='return addComment.moveForm( "comment-30191", "30191", "respond", "2599" )' aria-label='Reply to Justin'>Reply</a>                </div>
+            </div> 
+       </div>    
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-31610">
+	<div id="comment-31610" style="position:relative;">
+	<div class="comment-author vcard">
+            <div class="avatar">
+                    <img alt='' src='http://0.gravatar.com/avatar/cd8da7fb43612e66b9f4b0d08fb20ce0?s=68&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cd8da7fb43612e66b9f4b0d08fb20ce0?s=136&#038;d=mm&#038;r=g 2x' class='avatar avatar-68 photo' height='68' width='68' />                    <time>September 21, 2017</time>    
+            </div>
+	</div>
+            <div class="comment-content">
+                
+                <span class="fn">Veronika</span>    
+                    
+                                <div class="comment-meta commentmetadata">
+                </div>
+                <p>Hi,<br />
+how can I track event &#8220;click on button&#8221; in email?</p>
+<p>Thank you :)</p>
+                <div class="reply">
+                <a rel='nofollow' class='comment-reply-link' href='http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/?replytocom=31610#respond' onclick='return addComment.moveForm( "comment-31610", "31610", "respond", "2599" )' aria-label='Reply to Veronika'>Reply</a>                </div>
+            </div> 
+       </div>    
+
+<ul class="children">
+	<li class="comment byuser comment-author-justin bypostauthor even depth-2" id="li-comment-31615">
+	<div id="comment-31615" style="position:relative;">
+	<div class="comment-author vcard">
+            <div class="avatar">
+                    <img alt='' src='http://2.gravatar.com/avatar/20c8ceb9b89e2a72d2785a8b37c45ce6?s=68&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/20c8ceb9b89e2a72d2785a8b37c45ce6?s=136&#038;d=mm&#038;r=g 2x' class='avatar avatar-68 photo' height='68' width='68' />                    <time>September 21, 2017</time>    
+            </div>
+	</div>
+            <div class="comment-content">
+                
+                <span class="fn">Justin</span>    
+                    
+                                <div class="comment-meta commentmetadata">
+                </div>
+                <p>Hey Veronika, this technique will work if the button is interactive (it does not open a browser). If you want to trick clicks on &#8220;regular&#8221; buttons that open a landing page, you&#8217;d probably have to rely on reports in your ESP or you&#8217;d need some proxy links (like Bitly but NOT Bitly since some clients mark it as spam).</p>
+                <div class="reply">
+                <a rel='nofollow' class='comment-reply-link' href='http://freshinbox.com/blog/tracking-interactions-in-email-with-google-analytics/?replytocom=31615#respond' onclick='return addComment.moveForm( "comment-31615", "31615", "respond", "2599" )' aria-label='Reply to Justin'>Reply</a>                </div>
+            </div> 
+       </div>    
+
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+ 
+<div class="navigation">
+<div class="alignleft"></div>
+<div class="alignright"></div>
+</div>
+</ol>
+</div>
+ 
+ 
+<div id="respond" class="box m-t-6">
+ 	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/tracking-interactions-in-email-with-google-analytics/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="http://freshinbox.com/blog/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='2599' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="833712fc15" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="39"/></p>			</form>
+			</div><!-- #respond -->
+	</div>
+			</div>
+</article>
+<aside class="sidebar c-4-12">
+<div id="sidebars" class="g">
+
+<a href="http://www.twitter.com/freshinbox" title="Follow FreshInbox on Twitter"><img src="/images/social-twitter.gif" alt="Follow FreshInbox on Twitter"/></a><a href="https://www.facebook.com/thefreshinbox" title="FreshInbox on Facebook"><img src="/images/social-fb.gif" alt="FreshInbox on Facebook"/></a>
+
+	<div class="sidebar">
+
+
+	<ul class="sidebar_list">
+
+
+		<li class="widget widget-sidebar"><h3>Newsletter</h3>			<div class="textwidget"><div style="padding:10px; border: 2px solid #99C731;background-color:#FFF8DC;border-radius:5px;">
+<form action="https://freshinbox1.createsend.com/t/i/s/adrmi/" method="post" id="subForm">
+<span class="fisub_header" style="font-weight:bold;">Subscribe to the #EmailGeeks Newsletter</span>
+<p><input id="fieldEmail" name="cm-adrmi-adrmi" type="email" style="width:90%" required placeholder="Your Email Address" /></p>
+<p><button type="submit">Subscribe</button></p>
+</form>
+</div></div>
+			</li><li class="widget widget-sidebar"><form method="get" id="searchform" class="search-form" action="http://freshinbox.com/blog" _lpchecked="1">
+	<fieldset>
+		<input type="text" name="s" id="s" value="Search this Site..." onfocus="if(this.value=='Search this Site...')this.value='';" x-webkit-speech onwebkitspeechchange="transcribe(this.value)"> 
+	</fieldset>
+	</fieldset>
+</form></li><li class="widget widget-sidebar">			<div class="textwidget"><center><a href="http://campaignworkhub.com?camp=freshinbox2" target="new"><img src="http://freshinbox.com/images/cw/cw-comp3.jpg" width=240"></a></center><BR>
+
+<center><a href="https://goo.gl/GjghtS" target="new"><img src="http://freshinbox.com/images/ad/eislv18_240x240.jpg" width="240" style="width:240px;"></a><BR><BR>
+</center> 
+
+<center><a href="https://www.emailonacid.com/?utm_source=referral&utm_medium=freshinbox&utm_campaign=hp_banner&utm_content=v1" target="new"><img src="http://freshinbox.com/images/cw/eoa-250x250.jpg" width="240" style="width:240px;"></a><BR>
+</center> </div>
+		</li>		<li class="widget widget-sidebar">		<h3>Recent Posts</h3>		<ul>
+											<li>
+					<a href="http://freshinbox.com/blog/amp-for-email-what-you-need-to-know-about-googles-new-interactive-email-effort/">AMP for Email: What You Need to Know About Google&#8217;s New Interactive Email Effort</a>
+									</li>
+											<li>
+					<a href="http://freshinbox.com/blog/magic-8-ball-achieving-pseudo-random-outcomes-in-interactive-email/">Magic 8 Ball: Achieving Pseudo-Random Outcomes In Interactive Email</a>
+									</li>
+											<li>
+					<a href="http://freshinbox.com/blog/faux-fixed-interactive-email-scrolling-technique/">Faux-Fixed Interactive Email Scrolling Technique</a>
+									</li>
+											<li>
+					<a href="http://freshinbox.com/blog/email-monks-email-design-contest/">Email Monks Email Design Contest</a>
+									</li>
+											<li>
+					<a href="http://freshinbox.com/blog/faux-video-video-in-email-using-sprites/">Faux-Video: Video in Email Using Sprites</a>
+									</li>
+					</ul>
+		</li><li class="widget widget-sidebar"><h3>Archives</h3>		<ul>
+			<li><a href='http://freshinbox.com/blog/2018/02/'>February 2018</a></li>
+	<li><a href='http://freshinbox.com/blog/2018/01/'>January 2018</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/12/'>December 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/11/'>November 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/10/'>October 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/09/'>September 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/08/'>August 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/07/'>July 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/06/'>June 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/05/'>May 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/03/'>March 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/02/'>February 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2017/01/'>January 2017</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/12/'>December 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/11/'>November 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/10/'>October 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/09/'>September 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/08/'>August 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/07/'>July 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/06/'>June 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/04/'>April 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/03/'>March 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/02/'>February 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2016/01/'>January 2016</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/12/'>December 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/11/'>November 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/10/'>October 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/09/'>September 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/08/'>August 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/07/'>July 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/06/'>June 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/05/'>May 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/04/'>April 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/03/'>March 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/02/'>February 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2015/01/'>January 2015</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/12/'>December 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/11/'>November 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/10/'>October 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/09/'>September 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/08/'>August 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/06/'>June 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/05/'>May 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/03/'>March 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/02/'>February 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2014/01/'>January 2014</a></li>
+	<li><a href='http://freshinbox.com/blog/2013/12/'>December 2013</a></li>
+		</ul>
+		</li><li class="widget widget-sidebar"><h3>Recent Comments</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Don Braithwaite</span> on <a href="http://freshinbox.com/blog/amp-for-email-what-you-need-to-know-about-googles-new-interactive-email-effort/#comment-34200">AMP for Email: What You Need to Know About Google&#8217;s New Interactive Email Effort</a></li><li class="recentcomments"><span class="comment-author-link">Megan M Hornbecker</span> on <a href="http://freshinbox.com/blog/amp-for-email-what-you-need-to-know-about-googles-new-interactive-email-effort/#comment-34164">AMP for Email: What You Need to Know About Google&#8217;s New Interactive Email Effort</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://freshinbox.com/blog/amp-for-email-what-you-need-to-know-about-googles-new-interactive-email-effort/' rel='external nofollow' class='url'>AMP for Email: What You Need to Know About Google&#8217;s New Interactive Email Effort</a></span> on <a href="http://freshinbox.com/blog/goodbye-gmail-grid-view/#comment-34155">Goodbye Gmail Grid View</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://freshinbox.com/blog/amp-for-email-what-you-need-to-know-about-googles-new-interactive-email-effort/' rel='external nofollow' class='url'>AMP for Email: What You Need to Know About Google&#8217;s New Interactive Email Effort</a></span> on <a href="http://freshinbox.com/blog/the-dawn-of-kinetic-email/#comment-34154">The Dawn of Kinetic Email</a></li><li class="recentcomments"><span class="comment-author-link">Justin</span> on <a href="http://freshinbox.com/blog/css-fixed-positioning-in-email/#comment-34074">CSS Fixed Positioning in Email</a></li></ul></li>	</ul>
+    <ul class="sidebar_rows">
+    <div class="sb_left">
+</div>
+    <div class="sb_right">
+
+
+</div>    
+    </ul>
+        <ul class="sidebar_list">
+            </ul>
+	</div>
+</div><!--sidebars-->
+</aside>	</div><!--#page-->
+</div><!--.container-->
+</div>
+	<footer>
+		<div class="container">
+			<div class="footer-content">
+               			<div class="copyrights">
+<div class="row" id="copyright-note">
+<span><a href="http://freshinbox.com/blog/" title="">FreshInbox</a> Copyright © 2018</span>
+</div>
+				</div> 
+			</div><!--.footer-content-->
+		</div><!--.container-->
+	</footer><!--footer-->
+<!--start social button script-->
+
+<!--end social button script-->
+<!--start footer code-->
+<!--end footer code-->
+
+<!-- font handler -->
+    <script type='text/javascript' src='http://freshinbox.com/blog/wp-includes/js/comment-reply.min.js?ver=4.9.3'></script>
+<script type='text/javascript' src='http://freshinbox.com/blog/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.50.0-2014.02.05'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/freshinbox.com\/blog\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://freshinbox.com/blog/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.8.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ajax_request = {"ajax_url":"http:\/\/freshinbox.com\/blog\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://freshinbox.com/blog/wp-content/plugins/forms-for-campaign-monitor/forms/views/public/js/app.js?ver=4.9.3'></script>
+<script type='text/javascript' src='http://freshinbox.com/blog/wp-includes/js/wp-embed.min.js?ver=4.9.3'></script>
+<script async="async" type='text/javascript' src='http://freshinbox.com/blog/wp-content/plugins/akismet/_inc/form.js?ver=4.0.1'></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46466489-1', 'freshinbox.com');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Start of StatCounter Code for Default Guide --> 
+<script type="text/javascript"> 
+var sc_invisible=1; 
+var sc_project=9478768; 
+var sc_security="00ccdb63"; 
+</script> 
+<script type="text/javascript" async 
+src="https://secure.statcounter.com/counter/counter.js"></script> 
+<noscript><div class="statcounter"><a title="hit counter" 
+href="https://statcounter.com/free-hit-counter/" 
+target="_blank"><img class="statcounter" 
+src="https://c.statcounter.com/10336542/0/139959cb/1/" 
+alt="hit counter"></a></div></noscript> 
+<!-- End of StatCounter Code for Default Guide --> 
+</body>
+
+</html>
