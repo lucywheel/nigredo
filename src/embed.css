@@ -1,0 +1,255 @@
+/* =============================================================================
+   EMBED (embed.scss)
+   ========================================================================== *//**
+ * This CSS should be embedded in the `<head>` of your email template.
+ *//* Settings
+   ========================================================================== *//* =============================================================================
+   CORE (settings/_core.scss)
+   ========================================================================== *//* Colors
+   ========================================================================== *//* Page
+   ========================================================================== *//* Typography
+   ========================================================================== *//**
+ * Base
+ *//**
+ * Headings
+ *//**
+ * Links
+ *//* Spacing
+   ========================================================================== *//**
+ * Control the default spacing of most elements by modifying these variables.
+ * You can add more entries to the `$spacers` map, should you need more
+ * variation.
+ *//* Borders
+   ========================================================================== *//* Grid
+   ========================================================================== *//* Breakpoints
+   ========================================================================== *//**
+ * Define the minimum dimension at which your layout will change, adapting to
+ * different screen sizes, for use in media queries.
+ *//* Generic
+   ========================================================================== *//* =============================================================================
+   RESET (embed/generic/_reset.scss)
+   ========================================================================== *//**
+ * 1. Removing auto-generated blue links on Apple devices.
+ *    More info: http://removebluelinks.com
+ * 2. Force Outlook to provide a "View in browser" menu link.
+ * 3. Yahoo! Mail has a knack for picking keywords in emails and linking them to
+ *    advertising popups (blue, dotted links). This is how we remove them.
+ * 4. Force Hotmail to display emails at full width.
+ * 5. Force Hotmail to display normal line spacing.
+ *    More info: http://www.emailonacid.com/forum/viewthread/43
+ */a[x-apple-data-detectors] {
+ /* 1 */
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+#outlook a {
+  padding: 0;
+ /* 2 */;
+}
+
+.yshortcuts a {
+  border-bottom: none !important;
+ /* 3 */;
+}
+
+.ExternalClass {
+  width: 100%;
+ /* 4 */;
+}
+
+.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div {
+  line-height: 100%;
+ /* 5 */;
+}/* Media queries
+   ========================================================================== *//* Objects
+   ========================================================================== *//* =============================================================================
+   GRID (embed/objects/_grid.scss)
+   ========================================================================== *//* Media queries
+   ========================================================================== *//* =============================================================================
+   MAIN-WRAPPER (embed/objects/_main-wrapper.scss)
+   ========================================================================== *//* Media queries
+   ========================================================================== *//* Components
+   ========================================================================== *//* =============================================================================
+   HERO (embed/components/_hero.scss)
+   ========================================================================== *//* Media queries
+   ========================================================================== *//* Utilities
+   ========================================================================== *//* =============================================================================
+   DISPLAY (embed/utilities/_display.scss)
+   ========================================================================== *//**
+ * Utilities for controlling the display box type of an element.
+ *//* Media queries
+   ========================================================================== *//* =============================================================================
+   SPACING (embed/utilities/_spacing.scss)
+   ========================================================================== *//* Media queries
+   ========================================================================== *//* =============================================================================
+   TYPOGRAPHY (embed/utilities/_typography.scss)
+   ========================================================================== *//* Media queries
+   ========================================================================== */@media (max-width: 640px) {
+/**
+	* 1. Makes images responsive on smaller screens.
+	*/  img {
+ /* 1 */
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .o-container {
+    width: 100% !important;
+  }
+
+  .o-container td {
+    width: 100% !important;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .o-column-1 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-2 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-3 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-4 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-5 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-6 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-7 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-8 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-9 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-10 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-11 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .o-column-12 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }/**
+	 * Updating spacing around main wrapper on smaller screens.
+	 */  .o-main-wrapper__inner {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .c-hero {
+    height: auto !important;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .c-hero__inner {
+    height: auto !important;
+  }
+
+  .c-hero__inner > table {
+    width: 100% !important;
+  }
+
+  .u-block\@sm {
+    display: block !important;
+  }
+
+  .u-table\@sm {
+    display: table !important;
+  }
+
+  .u-table-row\@sm {
+    display: table-row !important;
+  }
+
+  .u-table-cell\@sm {
+    display: table-cell !important;
+  }
+
+  .u-hidden\@sm {
+    display: none !important;
+  }/**
+	 * Utilities for controlling an element's padding.
+	 */.u-p-0\@sm {padding-top: 0 !important;padding-right: 0 !important;padding-bottom: 0 !important;padding-left: 0 !important;}.u-pt-0\@sm {padding-top: 0 !important;}.u-pr-0\@sm {padding-right: 0 !important;}.u-pb-0\@sm {padding-bottom: 0 !important;}.u-pl-0\@sm {padding-left: 0 !important;}.u-px-0\@sm {padding-right: 0 !important;padding-left: 0 !important;}.u-py-0\@sm {padding-vertical: 0 !important;}.u-p-1\@sm {padding-top: 5px !important;padding-right: 5px !important;padding-bottom: 5px !important;padding-left: 5px !important;}.u-pt-1\@sm {padding-top: 5px !important;}.u-pr-1\@sm {padding-right: 5px !important;}.u-pb-1\@sm {padding-bottom: 5px !important;}.u-pl-1\@sm {padding-left: 5px !important;}.u-px-1\@sm {padding-right: 5px !important;padding-left: 5px !important;}.u-py-1\@sm {padding-vertical: 5px !important;}.u-p-2\@sm {padding-top: 10px !important;padding-right: 10px !important;padding-bottom: 10px !important;padding-left: 10px !important;}.u-pt-2\@sm {padding-top: 10px !important;}.u-pr-2\@sm {padding-right: 10px !important;}.u-pb-2\@sm {padding-bottom: 10px !important;}.u-pl-2\@sm {padding-left: 10px !important;}.u-px-2\@sm {padding-right: 10px !important;padding-left: 10px !important;}.u-py-2\@sm {padding-vertical: 10px !important;}.u-p-3\@sm {padding-top: 15px !important;padding-right: 15px !important;padding-bottom: 15px !important;padding-left: 15px !important;}.u-pt-3\@sm {padding-top: 15px !important;}.u-pr-3\@sm {padding-right: 15px !important;}.u-pb-3\@sm {padding-bottom: 15px !important;}.u-pl-3\@sm {padding-left: 15px !important;}.u-px-3\@sm {padding-right: 15px !important;padding-left: 15px !important;}.u-py-3\@sm {padding-vertical: 15px !important;}.u-p-4\@sm {padding-top: 20px !important;padding-right: 20px !important;padding-bottom: 20px !important;padding-left: 20px !important;}.u-pt-4\@sm {padding-top: 20px !important;}.u-pr-4\@sm {padding-right: 20px !important;}.u-pb-4\@sm {padding-bottom: 20px !important;}.u-pl-4\@sm {padding-left: 20px !important;}.u-px-4\@sm {padding-right: 20px !important;padding-left: 20px !important;}.u-py-4\@sm {padding-vertical: 20px !important;}/**
+	 * Utilities for controlling an element's margin.
+	 */  .u-mx-auto\@sm {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .u-mx-0\@sm {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .u-mx-1\@sm {
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+  }
+
+  .u-mx-2\@sm {
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+  }
+
+  .u-mx-3\@sm {
+    margin-right: 15px !important;
+    margin-left: 15px !important;
+  }
+
+  .u-mx-4\@sm {
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+  }/**
+	 * Utilities for controlling the alignment of text.
+	 */  .u-text-left\@sm {
+    text-align: left !important;
+  }
+
+  .u-text-center\@sm {
+    text-align: center !important;
+  }
+
+  .u-text-right\@sm {
+    text-align: right !important;
+  }
+}
