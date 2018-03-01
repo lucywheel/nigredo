@@ -21,16 +21,16 @@ module.exports = {
 	},
 
 	concatcss: {
-		src: 'less/*.less',
+		src: 'css/*.css',
 		dest: dev,
 		cwd: dev,
 		allFile: 'css/styles.css'
 	},
 
 	images: {
-		src: 'images/**',
+		src: 'img/**',
 		cwd: dev,
-		dest: build + '/images'
+		dest: build + '/img'
 	}
 
 };
