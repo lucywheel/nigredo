@@ -33,6 +33,10 @@
 ## Knowledge Resources and Guides
 * [**Ru** Creating a Future-Proof Responsive Email Without Media Queries](https://webdesign.tutsplus.com/tutorials/creating-a-future-proof-responsive-email-without-media-queries--cms-23919)
 * [**Ru**Хабрахабр](https://habrahabr.ru/company/pechkin/blog/182964/)
+
+## Mail Server
+- [Принимаем электронную почту на Node.js (smtp-server и mailparser)
+](https://habrahabr.ru/post/315134/)
 * [CSS Support Guide for Email Clients | Campaign Monitor](https://www.campaignmonitor.com/css/)
 * [EDMdesigner Blog - HOW TO CREATE RESPONSIVE EMAIL DESIGNS WITH REACT NATIVE](https://blog.edmdesigner.com/)
 * [Accessibility in email: Part II](http://blog.gorebel.com/accessibility-in-email-part-ii/)
