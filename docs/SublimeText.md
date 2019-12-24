@@ -1,3 +1,5 @@
+# Sublime Text
+
 ## Плагины для frontend-разработки.
 - SideBar Enhancements
 - Emmet 
